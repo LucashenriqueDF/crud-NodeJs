@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres
+    container_name: crud-itamar
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_PASSWORD: p@0stgr33sql!
+      POSTGRES_DB: crud-itamar
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
