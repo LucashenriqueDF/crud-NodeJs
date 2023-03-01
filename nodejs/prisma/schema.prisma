@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model brasileirao {
+model corinthians {
   id Int @default(autoincrement()) @id
   name String
   qnt_titles Int
