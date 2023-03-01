@@ -1,33 +1,15 @@
-import {PrismaClient} from "@prisma/client";
+import CreateSongService from "../services/CreateService.mjs";
 
+export default class CreateSongController{
 
-const prisma = new PrismaClient
+    async handleCreateSong(req, res){
+        const song = req.body;
 
-export class PostcorinthiansController{
-
-    async post_corinthians(res, req){
-
-        const corinthians = req.body;
-
-            try {
-                    const create_corinthians = await prisma.corinthians.create({
-                        data:{
-                            nome: corinthians.nome,
-                            qnt_titles: corinthians.qtd_titles
-                        }
-                    })
-                    
-                    res.json(`corinthians create successfully: ${create_corinthians}`)
-                    
-                }catch(e) {
-                    res.json("This brasieirao already exists")
+        try {
+            const createdSong = await new CreateSongService().createSong(song);
+            res.json(createdSong);
+        } catch(err) {
+            res.json(err);
         }
-     }
+    }
 }
-
-
-
-
-        
-  
-

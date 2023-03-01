@@ -1,14 +1,11 @@
-import express from "express";
 import "dotenv/config";
-
+import express from "express";
+import routes from "./routes/index.mjs";
 
 const app = express();
 
 app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.json("Vai corinthians");
-});
+app.use(routes);
 
 const port = process.env.PORT; 
 
