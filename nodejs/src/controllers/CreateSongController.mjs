@@ -1,4 +1,4 @@
-import CreateSongService from "../services/CreateService.mjs";
+import CreateSongService from "../services/CreateSongService.mjs";
 
 export default class CreateSongController{
 
