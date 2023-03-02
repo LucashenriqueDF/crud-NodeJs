@@ -4,8 +4,8 @@ import {
           CreateSongController,
           DeleteSongController,
           ReadSongController,
-        // UpadateSongController,
-        // ReadSongController
+          UpdateSongController,
+    
       } from "../controllers/index.mjs"; 
 
 const routes = Router();
