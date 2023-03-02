@@ -3,16 +3,16 @@ import prisma from "../utils/prisma.mjs";
 export default class CreateSongService {
     async createSong(song) {
       try {
-          const createdSong = await prisma.CharlieBrownJrSongs.create({
+          const createdSong = await prisma.charlie_brown_jr_songs.create({
             data: {
-              songName: song.songName,
+              song_name: song.song_name,
               album: song.album,
               duration: song.duration,
-              linkSpotify: song.linkSpotify,
-              linkYouTube: song.linkYouTube
+              link_spotify: song.link_spotify,
+              link_you_tube: song.link_you_tube
             }
           })
-          
+          console.log(createdSong);
           return createdSong;
        } catch(err) {
             return err

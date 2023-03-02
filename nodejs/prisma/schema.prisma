@@ -10,11 +10,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model CharlieBrownJrSongs {
-  id Int @default(autoincrement()) @id
-  songName String
+model charlie_brown_jr_songs {
+  id BigInt @default(autoincrement()) @id
+  created_at DateTime @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+  song_name String
   album String
   duration String
-  linkSpotify String
-  linkYouTube String
+  link_spotify String
+  link_you_tube String
 }
