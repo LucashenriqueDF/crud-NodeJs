@@ -1,4 +1,4 @@
-import DeleteSongServices from "../services/DeleteSongService.mjs";
+import DeleteSongServices from "../../services/DeleteSongService.mjs";
 
 export default class DeleteSongController{
     

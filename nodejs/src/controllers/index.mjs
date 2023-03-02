@@ -2,13 +2,11 @@ import{
     CreateSongController,
     DeleteSongController,
     UpdateSongController,
-    ReadSongController,
 
-} from "../controllers/SongController";
+} from "./SongController/index.mjs";
 
-export{
+export {
     CreateSongController,
     DeleteSongController,
     UpdateSongController,
-    ReadSongController,
 }
