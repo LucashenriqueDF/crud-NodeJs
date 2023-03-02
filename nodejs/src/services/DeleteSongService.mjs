@@ -1,9 +1,9 @@
 import prisma from "../utils/prisma.mjs";
 
 export default class DeleteSongServices{
-        async deleteSong(song){
+        async deleteSong(res, req, song){
             try {
-                const deleteSong = await prisma.CharlieBrownJr.delete({
+                const deleteSong = await prisma.charlie_brown_jr_songs.delete({
                     where: {
                         id: Number(song.id)
                     }

@@ -12,7 +12,9 @@ export default class CreateSongService {
               link_you_tube: song.link_you_tube
             }
           })
-          console.log(createdSong);
+
+         return res.json(`Song ${createdSong.song_name} this created successfully`)
+          
           return createdSong;
        } catch(err) {
             return err

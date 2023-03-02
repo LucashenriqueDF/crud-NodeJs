@@ -4,12 +4,10 @@ import {
           CreateSongController,
           DeleteSongController,
           ReadSongController,
-          UpdateSongController,
-    
+          UpdateSongController,    
       } from "../controllers/index.mjs"; 
 
 const routes = Router();
-
 
 routes.post("/song", new CreateSongController().handleCreateSong);
 routes.delete("/song", new DeleteSongController().handleDeleteSong);
