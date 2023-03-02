@@ -7,6 +7,10 @@ export default class UpdateSongService{
                 const update_song = await prisma.charlie_brown_jr_songs.patch({
                     where:{
                         id: Number(song.id),
+                    },
+                    data:{
+                        song_name,
+                        album,
                     }
                 })
                     return res.json(`Song ${update_song} updated successfully`);
