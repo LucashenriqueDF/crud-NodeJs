@@ -1,22 +1,29 @@
 import prisma from "../utils/prisma.mjs"
 
 export default class UpdateSongService{
-        async handleUpdateSong(res, req){
-            try{
-                const song = res.body;
-                const update_song = await prisma.charlie_brown_jr_songs.patch({
-                    where:{
-                        id: Number(song.id),
-                    },
-                    data:{
-                        song_name,
-                        album,
-                    }
-                })
-                    return res.json(`Song ${update_song} updated successfully`);
+        async handleUpdateSong(song_updates){
+            const song = await prisma.charlie_brown_jr_songs.findUnique({
+                where: {
+                    id: song_updates.id
+                }
+            })
+            
+            if (!song) {
+                return new Error("Song doesn't exist")
+            }
 
-            }catch(err) {
-            res.json(err);   
-        }
+            try {
+                const updateSong = await prisma.charlie_brown_jr_songs.update({
+                    where: {
+                        id: song_updates.id
+                    },
+                    data: {
+                        song_updates
+                    }
+                }) 
+                return updateSong
+            } catch(err) {
+                return err
+            }
     }
 }
