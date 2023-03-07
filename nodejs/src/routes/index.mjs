@@ -3,9 +3,9 @@ import { Router } from "express";
 import {
           CreateSongController,
           DeleteSongController,
-          UpdateSongController,    
+          UpdateSongController,
+          GetSongsController    
       } from "../controllers/index.mjs"; 
-import GetSongsController from "../controllers/SongController/GetSongsController.mjs";
 
 const routes = Router();
 
