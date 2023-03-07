@@ -11,7 +11,7 @@ datasource db {
 }
 
 model charlie_brown_jr_songs {
-  id BigInt @default(autoincrement()) @id
+  id Int @default(autoincrement()) @id
   created_at DateTime @default(now())
   updated_at DateTime?
   deleted_at DateTime?
