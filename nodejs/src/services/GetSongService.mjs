@@ -11,11 +11,11 @@ export default class GetSongsService {
   }
 
   
-  async handleGetSongById(song){
+  async handleGetSongById(song_id){
     try {
-      const songs = await prisma.charlie_brown_jr_songs.findUnique({
+      const song = await prisma.charlie_brown_jr_songs.findUnique({
         where: {
-          id: Number(song.id)
+          id: Number(song_id)
         }
       })
       return song
