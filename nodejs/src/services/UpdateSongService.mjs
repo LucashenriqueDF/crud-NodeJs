@@ -8,18 +8,20 @@ export default class UpdateSongService{
                 }
             })
             
+
             if (!song) {
                 return new Error("Song doesn't exist")
             }
+
+            song_updates.updated_at = new Date();
 
             try {
                 const updateSong = await prisma.charlie_brown_jr_songs.update({
                     where: {
                         id: song_updates.id
                     },
-                    data: {
-                        song_updates
-                    }
+                    data: song_updates
+                    
                 }) 
                 return updateSong
             } catch(err) {

@@ -12,6 +12,6 @@ const routes = Router();
 routes.get("/song", new GetSongsController().handleGetSongs);
 routes.post("/song", new CreateSongController().handleCreateSong);
 routes.delete("/song/:id", new DeleteSongController().handleDeleteSong);
-routes.patch("/song/:id", new UpdateSongController().handleUpdateSong);
+routes.put("/song/:id", new UpdateSongController().handleUpdateSong);
 
 export default routes;

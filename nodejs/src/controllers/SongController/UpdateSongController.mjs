@@ -1,9 +1,9 @@
 import UpdateSongService from "../../services/UpdateSongService.mjs";
 
 export default class UpdateSongController{
-    async handleUpdateSong(res, req){
+    async handleUpdateSong(req, res){
         const song = req.body;
-        song.id = req.params.id;
+        song.id = Number(req.params.id);
         try{
             const updateSong = await new UpdateSongService().handleUpdateSong(song);
             res.json(updateSong);

@@ -4,7 +4,7 @@ export default class DeleteSongController{
     
     async handleDeleteSong(req, res){
         const song = req.body;
-        song.id = req.params.id;
+        song.id = Number(req.params.id);
         
         try {
             const deleteSong = await new DeleteSongServices().deleteSong(song)
