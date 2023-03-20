@@ -10,4 +10,10 @@ export default class GetSongsController {
     // }  
 
   }
+
+async handleGetSongById(req, res){
+    const song = await new GetSongsService().handleGetSongById(req.params.id);
+      return res.json(song);
+  }
+
 }

@@ -10,6 +10,7 @@ import {
 const routes = Router();
 
 routes.get("/song", new GetSongsController().handleGetSongs);
+routes.get("/song/:id", new GetSongsController().handleGetSongById);
 routes.post("/song", new CreateSongController().handleCreateSong);
 routes.delete("/song/:id", new DeleteSongController().handleDeleteSong);
 routes.put("/song/:id", new UpdateSongController().handleUpdateSong);

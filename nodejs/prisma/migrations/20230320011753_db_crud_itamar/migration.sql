@@ -1,15 +1,6 @@
-/*
-  Warnings:
-
-  - You are about to drop the `CharlieBrownJrSongs` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropTable
-DROP TABLE "CharlieBrownJrSongs";
-
 -- CreateTable
 CREATE TABLE "charlie_brown_jr_songs" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3),
     "deleted_at" TIMESTAMP(3),
